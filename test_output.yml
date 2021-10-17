@@ -2,9 +2,11 @@ env:
   abc: def
 jobs:
   Job 101:
-    runs-on: null
-    steps: null
+    steps:
+    - name: Run step
+      run: echo 'Hello world'
   Job 102:
-    runs-on: null
-    steps: null
+    needs:
+    - Job 101
+    - Job 101
 name: Test workflow
